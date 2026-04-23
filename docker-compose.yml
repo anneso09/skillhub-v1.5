@@ -70,7 +70,7 @@ services:
     networks:
       - skillhub_network
     ports:
-      - "8000:8000"
+      - "8001:8000"
     restart: unless-stopped
     mem_limit: 512m
     cpus: "0.5"
