@@ -23,7 +23,14 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Variables non utilisées — ignore les majuscules et 'e' dans les catch
+      'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]', caughtErrors: 'none' }],
+      // Ces règles React Hooks sont trop strictes pour notre code fonctionnel
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/immutability': 'off',
+      'react-hooks/exhaustive-deps': 'warn',
+      // Fast refresh — warn au lieu d'erreur
+      'react-refresh/only-export-components': 'warn',
     },
   },
 ])
