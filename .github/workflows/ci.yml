@@ -27,7 +27,8 @@ jobs:
 
       - name: Install PHP dependencies
         working-directory: skillhub-backend
-        run: composer install --no-dev --optimize-autoloader --no-interaction --no-scripts --ignore-platform-req=ext-mongodb
+        # En CI on installe AVEC les dépendances dev pour avoir PHPUnit
+        run: composer install --optimize-autoloader --no-interaction --no-scripts --ignore-platform-req=ext-mongodb
 
       - name: Copy .env for tests
         working-directory: skillhub-backend
@@ -43,8 +44,8 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ":memory:"
-          # MongoDB désactivé en CI — les tests unitaires n'en ont pas besoin
           MONGO_URI: "mongodb://localhost:27017/test"
+          JWT_SECRET: "ci_test_secret_key_pour_les_tests"
 
       # 3. ── FRONTEND React ─────────────────────────────────────
       - name: Setup Node.js
