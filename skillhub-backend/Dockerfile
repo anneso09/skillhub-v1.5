@@ -26,7 +26,7 @@ WORKDIR /app
 # Pourquoi ? Docker met en cache chaque étape — si composer.json
 # ne change pas, il réutilise le cache et n'installe pas tout à nouveau
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 # Maintenant on copie tout le code source
 COPY . .
