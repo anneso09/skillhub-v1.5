@@ -1,0 +1,6 @@
+vendor/
+.env
+.git
+storage/logs/*
+storage/framework/cache/*
+node_modules/
