@@ -1,3 +1,6 @@
+# Racine
+.env
+
 # Laravel
 skillhub-backend/.env
 skillhub-backend/vendor/
@@ -8,6 +11,7 @@ skillhub-backend/node_modules/
 skillhub-frontend/node_modules/
 skillhub-frontend/.env
 skillhub-frontend/build/
+skillhub-frontend/dist/
 
 # IDE
 .vscode/
